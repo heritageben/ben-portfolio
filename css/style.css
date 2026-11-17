@@ -55,9 +55,30 @@ main {
 }
 
 .card {
+  position: relative;
   display: block;
   text-decoration: none;
   color: inherit;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card .label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0) 60%);
+  font-size: 1.05rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.card:hover .label,
+.card:focus-visible .label {
+  opacity: 1;
 }
 
 .card video,
