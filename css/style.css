@@ -1,0 +1,126 @@
+:root {
+  --bg: #0e0e0e;
+  --fg: #f2f2f2;
+  --muted: #9a9a9a;
+  --accent: #d9b77a;
+  --max: 1200px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+header.site {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header.site .name {
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+header.site nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+header.site nav a:hover,
+header.site nav a[aria-current="page"] { color: var(--fg); }
+
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card video,
+.card .thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  background: #1c1c1c;
+  border-radius: 4px;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin: 12px 0 4px;
+  font-weight: 600;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.project video.main,
+.project iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  display: block;
+  background: #000;
+}
+
+.project h1 { font-size: 2rem; margin: 24px 0 8px; }
+
+.project .roles {
+  color: var(--accent);
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+}
+
+.project .meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.about {
+  max-width: 680px;
+}
+
+.about p { font-size: 1.1rem; }
+
+footer.site {
+  max-width: var(--max);
+  margin: 48px auto 0;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid #222;
+}
+
+@media (max-width: 640px) {
+  header.site { flex-direction: column; align-items: flex-start; gap: 12px; }
+  header.site nav a:first-child { margin-left: 0; }
+}
